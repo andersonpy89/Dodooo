@@ -1,0 +1,287 @@
+/*****************************************************
+ * DODÔ — CONTROLE FINANCEIRO PESSOAL
+ * CSS refatorado | Simples | Escalável
+ *****************************************************/
+
+/* ===================================================
+   RESET + BASE
+=================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 40px 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f1f3f6;
+  color: #333;
+}
+
+/* ===================================================
+   CONTAINER
+=================================================== */
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* ===================================================
+   TÍTULOS
+=================================================== */
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.titulo-controle {
+  text-align: center;
+  color: #8e24aa; /* lilás */
+  margin-bottom: 30px;
+}
+
+/* ===================================================
+   ACCORDION
+=================================================== */
+
+.accordion {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.accordion header {
+  padding: 14px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f7f7f7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accordion header::after {
+  content: "▸";
+  transition: transform 0.2s ease;
+}
+
+.accordion.open header::after {
+  transform: rotate(90deg);
+}
+
+.accordion .content {
+  display: none;
+  padding: 18px;
+  background: #ffffff;
+}
+
+.accordion.open .content {
+  display: block;
+}
+
+/* ===================================================
+   RESUMO FINANCEIRO
+=================================================== */
+
+.resumo {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.resumo-card {
+  flex: 1;
+  min-width: 220px;
+  padding: 18px;
+  border-radius: 10px;
+  color: #ffffff;
+}
+
+.resumo-card strong {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+.resumo-card p {
+  margin: 6px 0 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.resumo-card.entrada {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+}
+
+.resumo-card.saida {
+  background: linear-gradient(135deg, #c62828, #e53935);
+}
+
+.resumo-card.total.positivo {
+  background: linear-gradient(135deg, #2e7d32, #43a047);
+}
+
+.resumo-card.total.negativo {
+  background: linear-gradient(135deg, #c62828, #e53935);
+}
+
+/* ===================================================
+   DASHBOARD
+=================================================== */
+
+.dash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+label {
+  font-weight: 500;
+}
+
+/* ===================================================
+   FORMULÁRIOS (GERAL)
+=================================================== */
+
+form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+input,
+select,
+button {
+  padding: 8px 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #8e24aa;
+}
+
+button {
+  cursor: pointer;
+  background: #8e24aa;
+  color: #fff;
+  border: none;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background: #6d1b7b;
+}
+
+/* ===================================================
+   CADASTROS
+=================================================== */
+
+.cadastros {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.cadastros > div {
+  flex: 1;
+  min-width: 260px;
+}
+
+/* ===================================================
+   TABELA DE TRANSAÇÕES
+=================================================== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+thead {
+  background: #f5f5f5;
+}
+
+th,
+td {
+  padding: 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+}
+
+th.data,
+td.data {
+  width: 110px;
+}
+
+th.valor,
+td.valor {
+  width: 180px;
+  font-weight: 600;
+}
+
+th.acoes,
+td.acoes {
+  width: 90px;
+  text-align: center;
+}
+
+/* ===================================================
+   BOTÕES DE AÇÃO
+=================================================== */
+
+.btn-editar,
+.btn-excluir {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-editar:hover {
+  color: #1976d2;
+}
+
+.btn-excluir:hover {
+  color: #c62828;
+}
+
+/* ===================================================
+   RESPONSIVO BÁSICO
+=================================================== */
+
+@media (max-width: 768px) {
+  .resumo {
+    flex-direction: column;
+  }
+
+  .cadastros {
+    flex-direction: column;
+  }
+
+  .dash {
+    gap: 20px;
+  }
+}
